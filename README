@@ -1,0 +1,61 @@
+AdWords API on AppEngine proof of concept
+===============================
+
+This is a project for a proof of concept using the Ads Java client library in 
+Google App Engine to create a web application that serves as a playground for 
+AdWords API developers.
+To use the playground, users need to authenticate using OAuth 2.0 and
+authorize the application to make calls to the AdWords API on the user's behalf.
+
+Getting started
+---------------
+
+The project is structured to use Maven and should be built and run using the
+Maven Google App Engine Plugin.
+
+If you don't have Maven, you can get it here:
+http://maven.apache.org/download.html
+
+The rest of the dependencies will be automatically pulled in using Maven but you
+can examine and modify them through the project's pom.xml if you wish.
+
+To build and run the project locally, follow these steps:
+
+1. Fill in your client ID and client secret in
+   src/main/webapp/WEB-INF/appengine-web.xml You can create the client ID and
+   secret in the API console (https://code.google.com/apis/console#access) using
+   the redirect URI below:
+
+   http://localhost:8080/oauth2callback
+   https://localhost:8080/oauth2callback
+
+2. Run the following Maven command to download the dependencies and compile the
+   project:
+
+   $ mvn compile
+
+3. Build the war and run the project:
+
+   $ mvn appengine:devserver
+
+4. The playground should be running at: http://localhost:8080/
+
+Deploying to App Engine
+-----------------------
+
+1. Create an App Engine application at https://appengine.google.com/.
+
+2. Follow steps 1 and 2 from above. In step 1, instead of localhost, you will
+   need to add a redirect URI that corresponds to the application ID of your
+   newly created App Engine application:
+
+   http://APP_ID.appspot.com/oauth2callback
+   https://APP_ID.appspot.com/oauth2callback
+
+3. Replace the application ID in
+   src/main/webapp/WEB-INF/appengine-web.xml with your App Engine application ID
+
+4. Run the following (you will be prompted for your username and password):
+
+   $ mvn appengine:update
+
