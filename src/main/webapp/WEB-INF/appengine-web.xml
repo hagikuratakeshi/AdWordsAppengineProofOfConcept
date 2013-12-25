@@ -16,7 +16,7 @@ Appengine application for AdWords Playground
 -->
 
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-  <application>takeshi-dfp-playground</application>
+  <application>INSERT_YOUR_APPLICATION_ID</application>
   <version>1</version>
   <threadsafe>false</threadsafe>
 
