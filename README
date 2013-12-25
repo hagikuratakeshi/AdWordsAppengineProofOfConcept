@@ -21,7 +21,7 @@ can examine and modify them through the project's pom.xml if you wish.
 
 To build and run the project locally, follow these steps:
 
-1. Fill in your client ID and client secret in
+1. Fill in your client ID, client secret, client customer ID and developer token in
    src/main/webapp/WEB-INF/appengine-web.xml You can create the client ID and
    secret in the API console (https://code.google.com/apis/console#access) using
    the redirect URI below:
